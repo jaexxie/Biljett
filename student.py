@@ -1,5 +1,7 @@
 from person import Person
 
-class Student:
-    def __init__():
-        pass
+class Student(Person):
+    def __init__(self, name:str, email: str, id_number: int, major: str):
+        super().__init__(name, email, id_number)
+        self.major = major
+        self.courses_enrolled = []
