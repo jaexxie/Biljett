@@ -51,16 +51,8 @@ class Course:
 
     def list_students(self) -> str:
         for student in self.students:
-            print(student)
+            print(f"Name: {student.name}, Department: {student.department}, Email: {student.email}")
 
     def list_courses(self) -> str:
         for course in self.courses:
-            print(course)
-
-courses = Course("OOP", "#AW2006")
-instructors = Instructor("Jack", "example@gmail.com", 456, "TS")
-students = Student("Artem", "example@gmail.com", 123, "IA")
-
-courses.add_instructors()
-
-courses.list_instructors()
+            print(f"Course name: {course.course_name}, Course Code: {course.course_code}")
