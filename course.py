@@ -11,7 +11,6 @@ class Course:
         self.students = []
         self.courses = []
 
-
         
     def add_students(self):
         name = input("Enter the student's name: ")
