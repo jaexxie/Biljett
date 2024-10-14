@@ -11,7 +11,6 @@ class Course:
         self.students = []
         self.courses = []
 
-
         
     def add_students(self):
         name = input("Enter the student's name: ")
@@ -57,10 +56,10 @@ class Course:
         for course in self.courses:
             print(course)
 
-courses = Course("OOP", "#AW2006")
+'''courses = Course("OOP", "#AW2006")
 instructors = Instructor("Jack", "example@gmail.com", 456, "TS")
 students = Student("Artem", "example@gmail.com", 123, "IA")
 
 courses.add_instructors()
 
-courses.list_instructors()
+courses.list_instructors()'''
