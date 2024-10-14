@@ -1,8 +1,8 @@
-from course import Course
+from person import Person
 
-class Enrollment(Course):
-    def __init__(self, course_name: str, course_code: str, instructor, grade:float):
-        super().__init__(course_name, course_code, instructor)
+class Enrollment():
+    def __init__(self, course_name: str, course_code: str, grade:float):
+        super().__init__(course_name, course_code)
         self.__grade = grade
 
     def get_grade(self):
@@ -15,9 +15,6 @@ class Enrollment(Course):
         pass
 
     def create_course(self) -> str:
-        pass
-
-    def enroll_student(self) -> str:
         pass
 
     def list_instructors(self) -> str:
