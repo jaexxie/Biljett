@@ -5,3 +5,9 @@ class Student(Person):
         super().__init__(name, email, id_number)
         self.major = major
         self.courses_enrolled = []
+
+    def enroll(course):
+        pass
+
+    def list_enrollments():
+        pass

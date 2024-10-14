@@ -5,3 +5,9 @@ class Course:
         self.course_code = course_code
         self.instructor = instructor
         self.students = []
+
+    def add_student(student):
+        pass
+
+    def list_students():
+        pass

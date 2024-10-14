@@ -5,3 +5,9 @@ class Instructor(Person):
         super().__init__(name, email, id_number)
         self.department = department
         self.courses_taught = []
+
+    def assign_course(course):
+        pass
+
+    def list_courses():
+        pass
