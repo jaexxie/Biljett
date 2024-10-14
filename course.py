@@ -2,12 +2,12 @@ from student import Student
 from instructor import Instructor
 
 class Course:
-    def __init__(self, course_name: str, course_code: str, instructor):
+    def __init__(self, course_name: str, course_code: str, instructor = None):
         self.course_name = course_name
         self.course_code = course_code
         self.instructor = instructor
         self.students = []
-        self.isntructors = []
+        self.instructors = []
 
     def add_student(self) -> str:
         name = input("Enter the student's name: ")
@@ -18,6 +18,8 @@ class Course:
         student = Student(name, email, id, major) 
         
         self.students.append(student)
+
+        print(f"{name} has been added!")
 
     def add_instructor(self) -> str:
         name = input("Enter the instructors's name: ")
@@ -36,4 +38,4 @@ class Course:
 
 course_1 = Course("Algorithms", "CS102")
 
-course_1.add_instructor()
+course_1.add_student()
