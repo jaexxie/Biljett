@@ -6,4 +6,8 @@ class Course:
         self.instructors = []
         self.students = []
         
-    
+    def add_students(self):
+        pass
+
+    def add_instructors(self):
+        pass
