@@ -1,4 +1,4 @@
-from person import Person
+from course import Course
 
 class Enrollment():
     def __init__(self, course_name: str, course_code: str, grade:float):
