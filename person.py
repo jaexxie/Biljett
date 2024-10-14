@@ -10,9 +10,4 @@ class Person:
         return self.__id_number
     
     def __str__(self):
-        return (f"\n{self.name} takes the course {self.course_code}, {self.course_name}")
-    
-
-student = Person("Alex", "123@gmail.com", 14, "Object Oriented Programming", "DA361A")
-
-print(student)
+        return (f"\n Name: {self.name}, Email: {self.email}, ID: {self.__id_number} ")
