@@ -1,7 +1,8 @@
-from enrollment import Enrollment
+from course import Course
+
 class Menu:
     def __init__(self):
-        self.enrollment = None
+        self.course = Course("Default course", "N/A")
 
     def display_menu(self):
 
@@ -20,19 +21,19 @@ class Menu:
             choice = input("Your choice? ")
 
             if choice == "1":
-                self.enrollment.add_student()
+                self.course.add_students()
             elif choice == "2":
-                self.enrollment.hire_instructor()
+                self.course.add_instructors()
             elif choice == "3":
-                self.enrollment.create_course()
+                self.course.create_course()
             elif choice == "4":
-                self.enrollment.list_instructors()
+                self.course.list_instructors()
             elif choice == "5":
-                self.enrollment.list_students()
+                self.course.list_students()
             elif choice == "6":
-                self.enrollment.list_courses()
+                self.course.list_courses()
             elif choice == "7":
-                self.enrollment.display_enrollment_details()
+                "self.course.display_enrollment_details()"
             elif choice == "8":
                 print("\nSee you later!")
                 break
