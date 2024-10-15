@@ -8,6 +8,7 @@ class Course:
         self.person = []
         self.students = []
         self.instructors = []
+        self.courses = []
 
     def add_students(self):
         name = input("Enter the student's name: ")
@@ -67,7 +68,6 @@ class Course:
                 print(f"Course name: {course.course_name}, Course Code: {course.course_code}")
 
     def display_enrollment_details(self):
-            
             #Course name, Instructor, All the students assigned to that course
             course_name = input("Enter the course: ")
 
