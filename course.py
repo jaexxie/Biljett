@@ -11,7 +11,6 @@ class Course:
         self.students = []
         self.courses = []
 
-        
     def add_students(self):
         name = input("Enter the student's name: ")
         email = input("Enter the student's email: ")
@@ -45,13 +44,30 @@ class Course:
         print(f"{name} has been added to the list of courses!")
 
     def list_instructors(self) -> str:
+        if not self.instructors:
+            print("No instructors have been assigned yet")
         for instructor in self.instructors:
             print(f"Name: {instructor.name}, Department: {instructor.department}, Email: {instructor.email}")
 
     def list_students(self) -> str:
-        for student in self.students:
-            print(f"Name: {student.name}, Department: {student.department}, Email: {student.email}")
+        if not self.students:
+            print("No students have been accepted yet.")
+        else:
+            for student in self.students:
+                print(student)
 
     def list_courses(self) -> str:
-        for course in self.courses:
-            print(f"Course name: {course.course_name}, Course Code: {course.course_code}")
+        if not self.courses:
+            print("No courses have been created yet.")
+        else:
+            for course in self.courses:
+                print(course)
+
+
+'''courses = Course("OOP", "#AW2006")
+instructors = Instructor("Jack", "example@gmail.com", 456, "TS")
+students = Student("Artem", "example@gmail.com", 123, "IA")
+
+courses.add_instructors()
+
+courses.list_instructors()'''

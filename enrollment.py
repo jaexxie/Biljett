@@ -9,8 +9,5 @@ class Enrollment(Course):
     def get_grade(self):
         return self.__grade
 
-    def display_enrollment_details(self):
-        pass
-
 
     
