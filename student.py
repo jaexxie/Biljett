@@ -1,10 +1,9 @@
 from person import Person
 
 class Student(Person):
-    def __init__(self, name:str, email: str, id_number: int, major: str, grade = None):
+    def __init__(self, name:str, email: str, id_number: int, major: str):
         super().__init__(name, email, id_number)
-        self.major = major
-        self.grade = grade
+        self.__major = major
     
-    def display_grades(self):
-        pass
+    def get_major(self):
+        return self.__major
