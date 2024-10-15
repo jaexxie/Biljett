@@ -1,7 +1,6 @@
 from course import Course
 from instructor import Instructor
 from student import Student
-from enrollment import Enrollment
 
 class Menu:
     def __init__(self):
@@ -36,7 +35,7 @@ class Menu:
             elif choice == "6":
                 self.course.list_courses()
             elif choice == "7":
-                self.enrollment.display_enrollment_details()
+                self.course.display_enrollment_details()
             elif choice == "8":
                 print("\nSee you later!")
                 break
