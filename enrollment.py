@@ -2,7 +2,7 @@ from instructor import Instructor
 from student import Student
 from course import Course
 
-class Enrollment(Course):
+'''class Enrollment(Course):
     def __init__(self, course_name: str, course_code: str):
         super().__init__(course_name, course_code)
 
@@ -31,4 +31,4 @@ class Enrollment(Course):
                             print(f"Name: {student.name}, Email: {student.email}")
                     break
         else:
-            print("Course not found")        
+            print("Course not found")        '''

@@ -66,11 +66,29 @@ class Course:
             for course in self.courses:
                 print(f"Course name: {course.course_name}, Course Code: {course.course_code}")
 
+    def display_enrollment_details(self):
+            
+            #Course name, Instructor, All the students assigned to that course
+            course_name = input("Enter the course: ")
 
-'''courses = Course("OOP", "#AW2006")
-instructors = Instructor("Jack", "example@gmail.com", 456, "TS")
-students = Student("Artem", "example@gmail.com", 123, "IA")
+            if course_name in self.courses:
+                for course in Course.all_courses:
+                    if course.course_name == course_name:
+                        print(f"Course name: {course.course_name}")
 
-courses.add_instructors()
+                        print("Instructors: ")
+                        if not course.instructors:
+                            print("No instructors")
+                        else:
+                            for instructor in course.instructors:
+                                print(f"Name: {instructor.name}, Email: {instructor.email}")
 
-courses.list_instructors()'''
+                        print("Students")
+                        if not course.students:
+                            print("No students")
+                        else:
+                            for student in course.students:
+                                print(f"Name: {student.name}, Email: {student.email}")
+                        break
+            else:
+                print("Course not found")        
