@@ -1,10 +1,9 @@
 from person import Person
 
 class Instructor(Person):
-    def __init__(self, name: str, email:str, id_number: int, department: str, courses_assigned = None):
+    def __init__(self, name: str, email:str, id_number: int, department: str):
         super().__init__(name, email, id_number)
-        self.department = department
-        self.courses_assigned = courses_assigned
+        self.__department = department
 
-    def assign_course(self):
-        pass
+    def get_department(self):
+        return self.__department
