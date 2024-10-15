@@ -1,35 +1,40 @@
+from person import Person
 from student import Student
 from instructor import Instructor
 
 class Course:
-    all_courses = []
     
     def __init__(self):
-        self.instructors = []
+        self.person = []
         self.students = []
-        self.courses = []
+        self.instructors = []
 
     def add_students(self):
         name = input("Enter the student's name: ")
         email = input("Enter the student's email: ")
         id_number = int(input("Enter the student's ID number: "))
         major = input("Enter the student's major: ")
+        course_name = input("Enter course name: ")
+        course_code = input("Enter course code: ")
 
-        student = Student(name, email, id_number, major)
+
+        student = Student(name, email, id_number, major, course_name, course_code)
 
         self.students.append(student)
-        print(f"Student {name} has been added to the course {self.course_name}.")
+        print(f"Student {name} has been added to the course {course_name}.")
 
     def add_instructors(self):
         name = input("Enter the instructor's name: ")
         email = input("Enter the instructor's email: ")
         id_number = int(input("Enter the instructor's ID number: "))
         department = input("Enter the instructor's department: ")
+        course_name = input("Enter course name: ")
+        course_code = input("Enter course code: ")
 
-        instructor = Instructor(name, email, id_number, department)
+        instructor = Instructor(name, email, id_number, department, course_name, course_code)
 
         self.instructors.append(instructor)
-        print(f"Instructor {name} has been added to the course {self.course_name}.")
+        print(f"Instructor {name} has been added to the course {course_name}.")
 
     def create_course(self) -> str:
         name = input("Enter course name: ")
