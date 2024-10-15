@@ -4,9 +4,7 @@ from instructor import Instructor
 class Course:
     all_courses = []
     
-    def __init__(self, course_name: str, course_code: str):
-        self.course_name = course_name
-        self.course_code = course_code
+    def __init__(self):
         self.instructors = []
         self.students = []
         self.courses = []
@@ -54,14 +52,14 @@ class Course:
             print("No students have been accepted yet.")
         else:
             for student in self.students:
-                print(student)
+                print(f"Student name: {student.name}, Email: {student.email}")
 
     def list_courses(self) -> str:
         if not self.courses:
             print("No courses have been created yet.")
         else:
             for course in self.courses:
-                print(course)
+                print(f"Course name: {course.course_name}, Course Code: {course.course_code}")
 
 
 '''courses = Course("OOP", "#AW2006")
