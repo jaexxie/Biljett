@@ -5,8 +5,7 @@ from enrollment import Enrollment
 
 class Menu:
     def __init__(self):
-        self.course = Course("Default course", "N/A")
-        self.enrollment = Enrollment("Default name", "N/A")
+        self.course = Course()
 
     def display_menu(self):
 
