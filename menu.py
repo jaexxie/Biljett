@@ -38,9 +38,9 @@ class Menu:
             elif choice == "6":
                 self.course.delete_course()
             elif choice == "7":
-                self.course.list_instructors()
-            elif choice == "8":
                 self.course.list_students()
+            elif choice == "8":
+                self.course.list_instructors()
             elif choice == "9":
                 self.course.list_courses()
             elif choice == "10":
