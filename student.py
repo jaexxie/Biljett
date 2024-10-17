@@ -5,5 +5,5 @@ class Student(Person):
         super().__init__(name, email, id_number, course_name, course_code)
         self.__major = major
     
-    def get_major(self):
+    def get_major(self) -> str:
         return self.__major

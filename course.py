@@ -4,13 +4,13 @@ from instructor import Instructor
 
 class Course:
     
-    def __init__(self):
+    def __init__(self) -> None:
         self.person = []
         self.students = []
         self.instructors = []
         self.courses = []
 
-    def add_students(self):
+    def add_students(self) -> None:
         while True:
             name = input("Enter the student's name: ")
             if name.replace(' ', '').isalpha:
@@ -64,7 +64,7 @@ class Course:
         self.students.append(student)
         print(f"Student {name} has been added to the course {course_name}.")
 
-    def add_instructors(self):
+    def add_instructors(self) -> None:
 
         while True:
             name = input("Enter the instructors name: ")
@@ -118,37 +118,90 @@ class Course:
         self.instructors.append(instructor)
         print(f"Instructor {name} has been added to the course {course_name}.")
 
-    def create_course(self) -> str:
-        name = input("Enter course name: ")
-        code = input("Enter course code: ")
+    def create_course(self) -> None:
 
-        course = Course(name, code)
+        while True:
+            name = input("Enter course name: ")
+            if name.replace(' ', '').isalpha:
+                name = name.capitalize().strip()
+                break
+            else:
+                print("Invalid input, please enter a valid course name. Only letters and spaces are allowed.")
+
+        while True:
+            course_code = input("Enter course code: ")
+            if course_code.isalnum():
+                course_code = course_code.upper().strip()
+                break
+            else:
+                print("Invalid input, please enter a valid alphanumeric course code.")
+
+        course = Course(name, course_code)
 
         self.courses.append(course)
         
         print(f"{name} has been added to the list of courses!")
 
-    def list_instructors(self) -> str:
+    def delete_student(self) -> None:
+        if not self.students:
+            print("No students to delete.")
+
+            delete_name = input("Enter the name of the student you would like to delete: ")
+
+            for student in self.students:
+                if student.name.lower() == delete_name.lower():
+                    self.students.remove(student)
+                    print(f"Student {student.name} has been removed.")
+                
+            print(f"No student found with the name '{student.name}'.")
+
+    def delete_instructor(self) -> None:
+            if not self.instructors:
+                print("No instructors to delete.")
+
+                delete_name = input("Enter the name of the instructor you would like to delete: ")
+
+                for instructor in self.instructors:
+                    if instructor.name.lower() == delete_name.lower():
+                        self.instructors.remove(instructor)
+                        print(f"Student {instructor.name} has been removed.")
+                    
+                print(f"No student found with the name '{instructor.name}'.")
+
+    def delete_course(self) -> None:
+        if not self.courses:
+            print("No courses to delete.")
+
+            delete_course = input("Enter the course code of the course you would like to delete: ")
+
+            for course in self.courses:
+                if course.course_code.lower() == delete_course.lower():
+                    self.courses.remove(course)
+                    print(f"Course {course.course_code} has been deleted.")
+                
+            print(f"No course found with the code {course.course_code}.")
+
+    def list_instructors(self) -> None:
         if not self.instructors:
             print("No instructors have been assigned yet")
         for instructor in self.instructors:
             print(f"Name: {instructor.name}, Department: {instructor.department}, Email: {instructor.email}")
 
-    def list_students(self) -> str:
+    def list_students(self) -> None:
         if not self.students:
             print("No students have been accepted yet.")
         else:
             for student in self.students:
                 print(f"Student name: {student.name}, Email: {student.email}")
 
-    def list_courses(self) -> str:
+    def list_courses(self) -> None:
         if not self.courses:
             print("No courses have been created yet.")
         else:
             for course in self.courses:
                 print(f"Course name: {course.course_name}, Course Code: {course.course_code}")
 
-    def display_enrollment_details(self):
+    def display_enrollment_details(self) -> None:
             #Course name, Instructor, All the students assigned to that course
             course_name = input("Enter the course: ")
 

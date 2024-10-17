@@ -7,9 +7,5 @@ class Person:
         self.email = email
         self.__id_number = id_number
 
-
-    def get_id(self):
+    def get_id(self) -> int:
         return self.__id_number
-    
-    def __str__(self):
-        return (f"\n Name: {self.name}, Email: {self.email}, ID: {self.__id_number} ")
