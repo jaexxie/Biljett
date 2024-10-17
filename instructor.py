@@ -5,5 +5,5 @@ class Instructor(Person):
         super().__init__(name, email, id_number, course_name, course_code)
         self.__department = department
 
-    def get_department(self):
+    def get_department(self) -> str:
         return self.__department
