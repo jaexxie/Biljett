@@ -12,14 +12,10 @@ class Menu:
             print("\nWelcome to school!")
             print("1) Add student")
             print("2) Hire instructor")
-            print("3) Create course")
-            print("4) Delete student")
-            print("5) Delete instructor")
-            print("6) Delete course")
-            print("7) List students")
-            print("8) List instructors")
-            print("9) List courses")
-            print("10) Display enrollment details")
+            print("3) Delete student")
+            print("4) Delete instructor")
+            print("5) List students")
+            print("6) List instructors")
             print("0) Exit")
 
 
@@ -30,21 +26,13 @@ class Menu:
             elif choice == "2":
                 self.course.add_instructors()
             elif choice == "3":
-                self.course.create_course()
-            elif choice == "4":
                 self.course.delete_student()
-            elif choice == "5":
+            elif choice == "4":
                 self.course.delete_instructor()
-            elif choice == "6":
-                self.course.delete_course()
-            elif choice == "7":
+            elif choice == "5":
                 self.course.list_students()
-            elif choice == "8":
+            elif choice == "6":
                 self.course.list_instructors()
-            elif choice == "9":
-                self.course.list_courses()
-            elif choice == "10":
-                self.course.display_enrollment_details()
             elif choice == "0":
                 print("\nSee you later!")
                 break
