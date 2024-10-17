@@ -185,14 +185,14 @@ class Course:
         if not self.instructors:
             print("No instructors have been assigned yet")
         for instructor in self.instructors:
-            print(f"Name: {instructor.name}, Department: {instructor.department}, Email: {instructor.email}")
+            print(f"Name: {instructor.name}, Department: {instructor.get_department()}, Email: {instructor.email}")
 
     def list_students(self) -> None:
         if not self.students:
             print("No students have been accepted yet.")
         else:
             for student in self.students:
-                print(f"Student name: {student.name}, Email: {student.email}")
+                print(f"Student name: {student.name}, Major: {student.get_major()}, Email: {student.email}")
 
     def list_courses(self) -> None:
         if not self.courses:
