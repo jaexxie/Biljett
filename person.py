@@ -8,4 +8,7 @@ class Person:
         self.__id_number = id_number
 
     def get_id(self) -> int:
+        """
+        A getter that returns the private attribute 'id_number' of the person.
+        """
         return self.__id_number

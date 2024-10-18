@@ -7,6 +7,9 @@ class Menu:
         self.course = Course()
 
     def display_menu(self) -> None:
+        """
+        Displays the menu options for managing students and instructors,
+        """
 
         while True:
             print("\nWelcome to school!")
