@@ -14,8 +14,12 @@ class Menu:
             print("2) Hire instructor")
             print("3) Delete student")
             print("4) Delete instructor")
-            print("5) List students")
-            print("6) List instructors")
+            print("5) Update student")
+            print("6) Update instructor")
+            print("7) Search student")
+            print("8) Search instructor")
+            print("9) List students")
+            print("10) List instructors")
             print("0) Exit")
 
 
@@ -30,8 +34,16 @@ class Menu:
             elif choice == "4":
                 self.course.delete_instructor()
             elif choice == "5":
-                self.course.list_students()
+                self.course.update_student()
             elif choice == "6":
+                self.course.update_instructor()
+            elif choice == "7":
+                self.course.search_student()
+            elif choice == "8":
+                self.course.search_instructor()
+            elif choice == "9":
+                self.course.list_students()
+            elif choice == "10":
                 self.course.list_instructors()
             elif choice == "0":
                 print("\nSee you later!")

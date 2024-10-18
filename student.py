@@ -7,3 +7,6 @@ class Student(Person):
     
     def get_major(self) -> str:
         return self.__major
+    
+    def __str__(self) -> str:
+        return (f"Student Name: {self.name}, Email: {self.email}, ID: {self.get_id()}, Major: {self.get_major()}, Course: {self.course_name} ({self.course_code})")

@@ -12,17 +12,17 @@ class Course:
 
     def add_students(self) -> None:
         while True:
-            name = input("Enter the student's name: ")
-            if name.replace(' ', '').isalpha:
-                name = name.capitalize().strip()
+            name = input("Enter the student's name: ").strip()
+            if name.replace(' ', '').isalpha():
+                name = name.capitalize()
                 break
             else:
                 print("Invalid input, please enter a valid name. Only letter and spaces are allowed.")
 
         while True:
-            email = input("Enter the student's email: ")
+            email = input("Enter the student's email: ").strip()
             if "@" in email and "." in email:
-                email = email.strip()
+                email = email
                 break
             else:
                 print("Invalid email format. Please enter a valid email.")
@@ -35,29 +35,28 @@ class Course:
                 print("Invalid input, please enter a valid numeric ID number.")
 
         while True:
-            major = input("Enter the student's major: ")
+            major = input("Enter the student's major: ").strip()
             if major.replace(' ','').isalpha():
-                major = major.strip().title()
+                major = major.title()
                 break
             else:
                 print("Invalid input, please enter a valid major. Only letters and spaces are allowed.")
 
         while True:
-            course_name = input("Enter course name: ")
+            course_name = input("Enter course name: ").strip()
             if course_name.replace(' ','').isalpha():
-                course_name = course_name.strip().title()
+                course_name = course_name.title()
                 break
             else:
                 print("Invalid input, please try again. Only letters and spaces are allowed.")
 
         while True:
-            course_code = input("Enter course code: ")
+            course_code = input("Enter course code: ").strip()
             if course_code.isalnum():
-                course_code = course_code.upper().strip()
+                course_code = course_code.upper()
                 break
             else:
                 print("Invalid input, please enter a valid alphanumeric course code.")
-
 
         student = Student(name, email, id_number, major, course_name, course_code)
 
@@ -65,19 +64,18 @@ class Course:
         print(f"Student {name} has been added to the course {course_name}.")
 
     def add_instructors(self) -> None:
-
         while True:
-            name = input("Enter the instructors name: ")
-            if name.replace(' ', '').isalpha:
-                name = name.capitalize().strip()
+            name = input("Enter the instructors name: ").strip()
+            if name.replace(' ', '').isalpha():
+                name = name.capitalize()
                 break
             else:
                 print("Invalid input, please enter a valid name. Only letters and spaces are allowed.")
 
         while True:
-            email = input("Enter the instructor's email: ")
+            email = input("Enter the instructor's email: ").strip()
             if "@" in email and "." in email:
-                email = email.strip()
+                email = email
                 break
             else:
                 print("Invalid email format. Please enter a valid email.")
@@ -90,25 +88,25 @@ class Course:
                 print("Invalid input, please enter a valid numeric ID number.")
 
         while True:
-            department = input("Enter the instructor's department: ")
+            department = input("Enter the instructor's department: ").strip()
             if department.replace(' ','').isalpha():
-                department = department.strip().title()
+                department = department.title()
                 break
             else:
                 print("Invalid input, please enter a valid department. Only letters and spaces are allowed.")
 
         while True:
-            course_name = input("Enter course name: ")
+            course_name = input("Enter course name: ").strip()
             if course_name.replace(' ','').isalpha():
-                course_name = course_name.strip().title()
+                course_name = course_name.title()
                 break
             else:
                 print("Invalid input, please try again. Only letters and spaces are allowed.")
 
         while True:
-            course_code = input("Enter course code: ")
+            course_code = input("Enter course code: ").strip()
             if course_code.isalnum():
-                course_code = course_code.upper().strip()
+                course_code = course_code.upper()
                 break
             else:
                 print("Invalid input, please enter a valid alphanumeric course code.")
@@ -147,6 +145,146 @@ class Course:
                 return
             
         print(f"No instructor found with the name '{delete_name}'.")
+
+    def update_student(self) -> None:
+        while True:
+            update_student = input("Enter the name of the student you would like to update: ")
+
+            for student in self.students:
+                if student.name.lower() == update_student.lower():
+                    print(f"Updating student: {student}")
+
+                    while True:
+                        new_name = input("Enter new name: ").strip()
+                        if new_name.isalpha():
+                            student.name = new_name.capitalize()
+                            break
+                        else:
+                            print("Invalid input, please enter a valid name.")
+
+                    while True:
+                        new_email = input("Enter new email: ").strip()
+                        if "@" in new_email and "." in new_email:
+                            student.email = new_email
+                            break
+                        else:
+                            print("Invalid input, please enter a valid email.")
+
+                    while True:
+                        try:
+                            new_id = int(input("Enter new ID: ").strip())
+                            student._Person__id_number = new_id
+                            break
+                        except ValueError:
+                            print("Invalid input, pleaser a valid ID number.")
+
+                    while True:
+                        new_major = input("Enter new major: ").strip()
+                        if new_major.replace(' ','').isalpha():
+                            student._Student__major = new_major.title()
+                            break
+                        else:
+                            print("Invalid input, please enter a valid major.")
+
+                    while True:
+                        new_course_name = input("Enter new course name: ").strip()
+                        if new_course_name.replace(' ', '').isalpha():
+                            student.course_name = new_course_name.title()
+                            break
+                        else:
+                            print("Invalid input, please enter a valid course name.")
+
+                    while True:
+                        new_course_code = input("Enter new course code: ").strip()
+                        if new_course_code.isalnum():
+                            student.course_code = new_course_code.upper()
+                            break
+                        else:
+                            print("Invalid input, please enter a valid course code.")
+
+                    print(f"Student has been updated successfully.")
+                    return                        
+        
+            print(f"No student found with the name '{update_student}'")
+            return
+
+    def update_instructor(self) -> None:
+        while True:
+            update_instructor = input("Enter the name of the instructor you would like to update: ")
+
+            for instructor in self.instructors:
+                if instructor.name.lower() == update_instructor.lower():
+                    print(f"Updating instructor: {instructor}")
+
+                    while True:
+                        new_name = input("Enter new name: ").strip()
+                        if new_name.isalpha():
+                            instructor.name = new_name.capitalize()
+                            break
+                        else:
+                            print("Invalid input, please enter a valid name.")
+
+                    while True:
+                        new_email = input("Enter new email: ").strip()
+                        if "@" in new_email and "." in new_email:
+                            instructor.email = new_email
+                            break
+                        else:
+                            print("Invalid input, please enter a valid email.")
+
+                    while True:
+                        try:
+                            new_id = int(input("Enter new ID: ").strip())
+                            instructor._Person__id_number = new_id
+                            break
+                        except ValueError:
+                            print("Invalid input, pleaser a valid ID number.")
+
+                    while True:
+                        new_department = input("Enter new major: ").strip()
+                        if new_department.replace(' ','').isalpha():
+                            instructor._Instructor__department = new_department.title()
+                            break
+                        else:
+                            print("Invalid input, please enter a valid major.")
+
+                    while True:
+                        new_course_name = input("Enter new course name: ").strip()
+                        if new_course_name.replace(' ', '').isalpha():
+                            instructor.course_name = new_course_name.title()
+                            break
+                        else:
+                            print("Invalid input, please enter a valid course name.")
+
+                    while True:
+                        new_course_code = input("Enter new course code: ").strip()
+                        if new_course_code.isalnum():
+                            instructor.course_code = new_course_code.upper()
+                            break
+                        else:
+                            print("Invalid input, please enter a valid course code.")
+
+                    print(f"Instructor has been updated successfully.")
+                    return                        
+        
+            print(f"No instructor found with the name '{update_instructor}'")
+            return
+
+    def search_student(self) -> None:
+        search_name = input("Enter the name of the student you're searching for: ")
+        for student in self.students:
+            if student.name.lower() == search_name.lower():
+                print(student)
+                return student
+        print(f"No student found with the name '{search_name}'")
+
+    def search_instructor(self) -> None:
+        instructor_name = input("Enter the name of the instructor you're searching for: ")
+        for instructor in self.instructors:
+            if instructor.name.lower() == instructor_name.lower():
+                print(instructor)
+                return instructor
+        print(f"No instructor found with the name '{instructor_name}'")
 
     def list_instructors(self) -> None:
         if not self.instructors:

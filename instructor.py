@@ -7,3 +7,6 @@ class Instructor(Person):
 
     def get_department(self) -> str:
         return self.__department
+    
+    def __str__(self) -> str:
+        return (f"Instructor Name: {self.name}, Email: {self.email}, ID: {self.get_id()}, Department: {self.get_department()}, Course: {self.course_name} ({self.course_code})")
