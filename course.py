@@ -11,6 +11,9 @@ class Course:
         self.courses = []
 
     def add_students(self) -> None:
+        """
+        Prompt the user to enter name, email, ID number, major, course name and course code for a new student and add them to the system.
+        """
         while True:
             name = input("Enter the student's name: ").strip()
             if name.replace(' ', '').isalpha():
@@ -64,6 +67,9 @@ class Course:
         print(f"Student {name} has been added to the course {course_name}.")
 
     def add_instructors(self) -> None:
+        """
+        Prompt the user to enter name, email, ID number, department, course name and course code for a new instructor and add them to the system.
+        """
         while True:
             name = input("Enter the instructors name: ").strip()
             if name.replace(' ', '').isalpha():
@@ -117,6 +123,9 @@ class Course:
         print(f"Instructor {name} has been added to the course {course_name}.")
 
     def delete_student(self) -> None:
+        """
+        Allows the user to name an student of their choice to remove from the system.
+        """
         if not self.students:
             print("No students to delete.")
             return
@@ -132,6 +141,9 @@ class Course:
         print(f"No student found with the name '{delete_name}'.")
 
     def delete_instructor(self) -> None:
+        """
+        Allows the user to name an instructor of their choice to remove from the system.
+        """
         if not self.instructors:
             print("No instructors to delete.")
             return
@@ -147,6 +159,9 @@ class Course:
         print(f"No instructor found with the name '{delete_name}'.")
 
     def update_student(self) -> None:
+        """
+        Allows for the user to change and update the information of a desired student by rewriting the name, email, ID number, major, course name and course code.
+        """
         while True:
             update_student = input("Enter the name of the student you would like to update: ")
 
@@ -209,6 +224,9 @@ class Course:
             return
 
     def update_instructor(self) -> None:
+        """
+        Allows for the user to change and update the information of a desired student by rewriting the name, email, ID number, department, course name and course code.
+        """
         while True:
             update_instructor = input("Enter the name of the instructor you would like to update: ")
 
@@ -271,6 +289,9 @@ class Course:
             return
 
     def search_student(self) -> None:
+        """
+        Prompts the user to enter the name of a student they are searching for, and displaying that individuals information.
+        """
         search_name = input("Enter the name of the student you're searching for: ")
         for student in self.students:
             if student.name.lower() == search_name.lower():
@@ -279,6 +300,9 @@ class Course:
         print(f"No student found with the name '{search_name}'")
 
     def search_instructor(self) -> None:
+        """
+        Prompts the user to enter the name of a instructor they are searching for, and displaying that individuals information.
+        """
         instructor_name = input("Enter the name of the instructor you're searching for: ")
         for instructor in self.instructors:
             if instructor.name.lower() == instructor_name.lower():
@@ -287,12 +311,18 @@ class Course:
         print(f"No instructor found with the name '{instructor_name}'")
 
     def list_instructors(self) -> None:
+        """
+        Lists all existing students in the system for the user to view.
+        """
         if not self.instructors:
             print("No instructors have been assigned yet")
         for instructor in self.instructors:
             print(f"Instructor Name: {instructor.name}, ID: {instructor.get_id()} Email: {instructor.email}, Department: {instructor.get_department()}, Course Name: {instructor.course_name}, Course Code: {instructor.course_code}")
 
     def list_students(self) -> None:
+        """
+        Lists all existing instructors in the system for the user to view.
+        """
         if not self.students:
             print("No students have been accepted yet.")
         else:

@@ -6,7 +6,13 @@ class Instructor(Person):
         self.__department = department
 
     def get_department(self) -> str:
+        """
+        A getter that returns the private attribute 'department' of the instructor.
+        """
         return self.__department
     
     def __str__(self) -> str:
+        """
+        Returns a string representation of the instructor.
+        """
         return (f"Instructor Name: {self.name}, Email: {self.email}, ID: {self.get_id()}, Department: {self.get_department()}, Course: {self.course_name} ({self.course_code})")
